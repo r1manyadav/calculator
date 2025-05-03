@@ -1,0 +1,474 @@
+<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online calculator with Indian number system support. Perform basic calculations with comma separators in Indian format (1,00,00,000).">
+    <meta name="keywords" content="calculator, Indian calculator, online calculator, maths tool, calculation">
+    <title>Indian Style Calculator - Free Online Calculation Tool</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #f5f5f5;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --bg-color: #fff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .ad-banner {
+            width: 100%;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            margin: 20px 0;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .calculator-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .calculator {
+            background-color: var(--bg-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 20px var(--shadow-color);
+            padding: 25px;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 30px;
+        }
+
+        .calculator-screen {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: right;
+            font-size: 2rem;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .previous-operand {
+            font-size: 1rem;
+            color: #666;
+            min-height: 20px;
+            word-break: break-all;
+        }
+
+        .current-operand {
+            font-size: 2rem;
+            word-break: break-all;
+        }
+
+        .calculator-keys {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 15px;
+        }
+
+        button {
+            height: 60px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            background-color: #f0f0f0;
+            color: var(--text-color);
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .operator {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .operator:hover {
+            background-color: #3a5bef;
+        }
+
+        .equals {
+            background-color: var(--accent-color);
+            color: white;
+            grid-column: span 2;
+        }
+
+        .equals:hover {
+            background-color: #e05a5a;
+        }
+
+        .clear, .delete {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .clear:hover, .delete:hover {
+            background-color: #e0a800;
+        }
+
+        .features {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+
+        .features h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .features ul {
+            list-style-type: none;
+        }
+
+        .features li {
+            background-color: var(--bg-color);
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .calculator, .features {
+                max-width: 100%;
+            }
+            
+            button {
+                height: 50px;
+                font-size: 1rem;
+            }
+        }
+
+        /* SEO enhancements */
+        .hidden {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Ad Banner -->
+        <div class="ad-banner">
+            <!-- Google AdSense Banner Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <header>
+            <h1>Indian Style Calculator</h1>
+            <p class="subtitle">Free online calculator with Indian number formatting (1,00,00,000)</p>
+        </header>
+
+        <div class="calculator-container">
+            <div class="calculator">
+                <div class="calculator-screen">
+                    <div class="previous-operand" id="previous-operand"></div>
+                    <div class="current-operand" id="current-operand">0</div>
+                </div>
+                <div class="calculator-keys">
+                    <button class="clear" onclick="clearAll()">AC</button>
+                    <button class="delete" onclick="deleteLastChar()">DEL</button>
+                    <button class="operator" onclick="appendOperator('%')">%</button>
+                    <button class="operator" onclick="appendOperator('/')">/</button>
+                    
+                    <button onclick="appendNumber('7')">7</button>
+                    <button onclick="appendNumber('8')">8</button>
+                    <button onclick="appendNumber('9')">9</button>
+                    <button class="operator" onclick="appendOperator('*')">×</button>
+                    
+                    <button onclick="appendNumber('4')">4</button>
+                    <button onclick="appendNumber('5')">5</button>
+                    <button onclick="appendNumber('6')">6</button>
+                    <button class="operator" onclick="appendOperator('-')">-</button>
+                    
+                    <button onclick="appendNumber('1')">1</button>
+                    <button onclick="appendNumber('2')">2</button>
+                    <button onclick="appendNumber('3')">3</button>
+                    <button class="operator" onclick="appendOperator('+')">+</button>
+                    
+                    <button onclick="appendNumber('0')">0</button>
+                    <button onclick="appendNumber('.')">.</button>
+                    <button class="equals" onclick="calculate()">=</button>
+                </div>
+            </div>
+
+            <div class="features">
+                <h2>Why Use Our Indian Calculator?</h2>
+                <ul>
+                    <li>✓ Displays numbers in Indian format (1,00,00,000)</li>
+                    <li>✓ Fast and accurate calculations</li>
+                    <li>✓ Clean, user-friendly interface</li>
+                    <li>✓ Works on all devices - mobile, tablet, desktop</li>
+                    <li>✓ No installation required - use directly in browser</li>
+                    <li>✓ Free to use with no hidden charges</li>
+                </ul>
+
+                <!-- Side Ad Banner -->
+                <div class="ad-banner" style="margin-top: 30px;">
+                    <!-- Google AdSense Square Ad -->
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                         data-ad-slot="XXXXXXXXXX"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Ad Banner -->
+        <div class="ad-banner">
+            <!-- Google AdSense Banner Ad -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+                 data-ad-slot="XXXXXXXXXX"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <footer>
+            <p>© 2023 Indian Style Calculator. All rights reserved.</p>
+            <p>A free tool for quick calculations with Indian number formatting.</p>
+        </footer>
+    </div>
+
+    <!-- Hidden SEO content -->
+    <div class="hidden">
+        <h1>Indian Number System Calculator</h1>
+        <p>Free online calculator that displays numbers in Indian format (1,00,00,000). Perform addition, subtraction, multiplication, and division with our easy-to-use calculator. Perfect for those who prefer the Indian numbering system with lakhs and crores.</p>
+        <p>calculator, Indian calculator, online calculator, lakh crore calculator, maths tool, calculation, free calculator, web calculator, Indian number system, digital calculator</p>
+    </div>
+
+    <script>
+        // Calculator state
+        let currentOperand = '0';
+        let previousOperand = '';
+        let operation = undefined;
+        let resetScreen = false;
+
+        // DOM elements
+        const currentOperandElement = document.getElementById('current-operand');
+        const previousOperandElement = document.getElementById('previous-operand');
+
+        // Format number in Indian system
+        function formatNumber(number) {
+            // Convert to string and remove existing commas
+            let numStr = number.toString().replace(/,/g, '');
+            
+            // Handle decimal numbers
+            const parts = numStr.split('.');
+            let integerPart = parts[0];
+            const decimalPart = parts.length > 1 ? '.' + parts[1] : '';
+            
+            // Format integer part with Indian comma separators
+            let lastThree = integerPart.substring(integerPart.length - 3);
+            let otherNumbers = integerPart.substring(0, integerPart.length - 3);
+            if (otherNumbers !== '') {
+                lastThree = ',' + lastThree;
+            }
+            let result = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ",") + lastThree;
+            
+            // Handle negative numbers
+            if (result.startsWith('-,')) {
+                result = '-' + result.substring(2);
+            }
+            
+            return result + decimalPart;
+        }
+
+        // Update the calculator display
+        function updateDisplay() {
+            currentOperandElement.textContent = formatNumber(currentOperand);
+            if (operation != null) {
+                previousOperandElement.textContent = `${formatNumber(previousOperand)} ${operation}`;
+            } else {
+                previousOperandElement.textContent = '';
+            }
+        }
+
+        // Append a number to the current operand
+        function appendNumber(number) {
+            if (currentOperand === '0' || resetScreen) {
+                currentOperand = '';
+                resetScreen = false;
+            }
+            
+            // Prevent multiple decimal points
+            if (number === '.' && currentOperand.includes('.')) return;
+            
+            currentOperand += number;
+            updateDisplay();
+        }
+
+        // Append an operator
+        function appendOperator(operator) {
+            if (currentOperand === '') return;
+            if (previousOperand !== '') {
+                calculate();
+            }
+            operation = operator;
+            previousOperand = currentOperand;
+            currentOperand = '';
+            updateDisplay();
+        }
+
+        // Perform calculation
+        function calculate() {
+            let computation;
+            const prev = parseFloat(previousOperand.replace(/,/g, ''));
+            const current = parseFloat(currentOperand.replace(/,/g, ''));
+            
+            if (isNaN(prev) || isNaN(current)) return;
+            
+            switch (operation) {
+                case '+':
+                    computation = prev + current;
+                    break;
+                case '-':
+                    computation = prev - current;
+                    break;
+                case '*':
+                    computation = prev * current;
+                    break;
+                case '/':
+                    computation = prev / current;
+                    break;
+                case '%':
+                    computation = prev % current;
+                    break;
+                default:
+                    return;
+            }
+            
+            currentOperand = computation.toString();
+            operation = undefined;
+            previousOperand = '';
+            resetScreen = true;
+            updateDisplay();
+        }
+
+        // Clear all calculator state
+        function clearAll() {
+            currentOperand = '0';
+            previousOperand = '';
+            operation = undefined;
+            updateDisplay();
+        }
+
+        // Delete the last character
+        function deleteLastChar() {
+            if (currentOperand.length === 1 || (currentOperand.length === 2 && currentOperand.startsWith('-'))) {
+                currentOperand = '0';
+            } else {
+                currentOperand = currentOperand.slice(0, -1);
+            }
+            updateDisplay();
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', function(event) {
+            if (event.key >= '0' && event.key <= '9') appendNumber(event.key);
+            else if (event.key === '.') appendNumber('.');
+            else if (event.key === '+') appendOperator('+');
+            else if (event.key === '-') appendOperator('-');
+            else if (event.key === '*') appendOperator('*');
+            else if (event.key === '/') appendOperator('/');
+            else if (event.key === '%') appendOperator('%');
+            else if (event.key === 'Enter' || event.key === '=') calculate();
+            else if (event.key === 'Escape') clearAll();
+            else if (event.key === 'Backspace') deleteLastChar();
+        });
+
+        // Initialize display
+        updateDisplay();
+    </script>
+</body>
+</html>
